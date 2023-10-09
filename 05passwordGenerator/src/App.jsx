@@ -22,8 +22,13 @@ function App() {
     if (numAllowed) str += "0123456789";
     if (charAllowed) str += "~`!@#$%^&*()_+=[]{}";
 
-    for (let i = 1; i < length; i++) {
+    for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length + 1);
+      // this line picks any character from 'str' and the index of the random number
+      // genrated by Math.random() will be stored in 'char'
+      // any random character is picked, and loop will create a password of that length
+      // for example the length is 8, the loop will pick any 8 random characters from 'str'
+      // each time the values is added to ''pass'
       pass += str.charAt(char);
 
       setPassword(pass);
@@ -39,6 +44,7 @@ function App() {
     window.navigator.clipboard.writeText(password);
   }, [password]);
 
+  // whenever any change happens in either of 4 dependencies this will be hit
   useEffect(() => {
     passwordGenerator();
   }, [length, numAllowed, charAllowed, passwordGenerator]);
