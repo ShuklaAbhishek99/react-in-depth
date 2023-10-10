@@ -7,7 +7,14 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Layout from "./Layout";
-import { About, Contact, Home } from "./components";
+import {
+  About,
+  Contact,
+  Github,
+  Home,
+  User,
+  githubInfoLoader,
+} from "./components";
 import "./index.css";
 
 // old method to create routes
@@ -34,11 +41,16 @@ import "./index.css";
 
 // new method to create route
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Layout />}>
-    <Route path="" element={<Home/>} />
-    <Route path="about" element={<About/>} />
-    <Route path="contact" element={<Contact/>} />
-  </Route>)
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route path="" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="user/:userId" element={<User />} />
+      {/* loader for early data fetch */}
+      <Route loader={githubInfoLoader} path="github" element={<Github />} />
+    </Route>
+  )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
