@@ -6,4 +6,4 @@ useId()
 useLoaderData()
 useParams()
 
-Context Api
+Context Api (useContext())
