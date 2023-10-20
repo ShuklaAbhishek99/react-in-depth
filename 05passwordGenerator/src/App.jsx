@@ -8,6 +8,7 @@ function App() {
   const [numAllowed, setNumAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
+  const [isCopy, setIsCopy] = useState("Copy");
 
   // useRef hook, using to copy password to clipboard
   const passwordRef = useRef(null);
@@ -32,6 +33,7 @@ function App() {
       pass += str.charAt(char);
 
       setPassword(pass);
+      setIsCopy("Copy");
     }
   }, [length, numAllowed, charAllowed, setPassword]);
 
@@ -63,9 +65,9 @@ function App() {
         />
         <button
           className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
-          onClick={copyPasswordToClipBoard}
+          onClick={()=>{copyPasswordToClipBoard(); setIsCopy("Copied")}}
         >
-          Copy
+          {isCopy}
         </button>
       </div>
       <div className="flex text-sm gap-x-2">
