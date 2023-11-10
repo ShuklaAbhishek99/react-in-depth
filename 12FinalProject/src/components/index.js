@@ -6,7 +6,7 @@ import LogoutBtn from "./Header/LogoutBtn";
 import Button from "./Button";
 import Input from "./Input";
 import Login from "./Login";
-import Protected from "./AuthLayout";
+import AuthLayout from "./AuthLayout";
 import Select from "./Select";
 import RTE from "./RTE";
 import Signup from "./Signup";
@@ -23,12 +23,12 @@ export {
     Button,
     Input,
     Login,
-    Protected,
+    AuthLayout,
     Select,
     RTE,
     Signup,
     PostCard,
     PostForm,
-    
+
 
 }
