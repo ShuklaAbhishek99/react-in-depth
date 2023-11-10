@@ -13,7 +13,6 @@ import Signup from "./Signup";
 import PostCard from "./PostCard";
 import PostForm from "./post-form/Postform";
 
-
 export {
     Header,
     Footer,
@@ -29,6 +28,4 @@ export {
     Signup,
     PostCard,
     PostForm,
-
-
 }
