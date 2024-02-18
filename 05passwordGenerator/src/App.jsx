@@ -31,10 +31,9 @@ function App() {
       // for example the length is 8, the loop will pick any 8 random characters from 'str'
       // each time the values is added to ''pass'
       pass += str.charAt(char);
-
-      setPassword(pass);
-      setIsCopy("Copy");
     }
+    setPassword(pass);
+    setIsCopy("Copy");
   }, [length, numAllowed, charAllowed, setPassword]);
 
   const copyPasswordToClipBoard = useCallback(() => {
@@ -65,7 +64,10 @@ function App() {
         />
         <button
           className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
-          onClick={()=>{copyPasswordToClipBoard(); setIsCopy("Copied")}}
+          onClick={() => {
+            copyPasswordToClipBoard();
+            setIsCopy("Copied");
+          }}
         >
           {isCopy}
         </button>
